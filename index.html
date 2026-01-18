@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Igor Sieczkowski Moreira • Apps</title>
+
+  <style>
+    :root{
+      --bg: #0b0f16;
+      --panel: rgba(255,255,255,0.06);
+      --panel-strong: rgba(255,255,255,0.10);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.68);
+      --muted2: rgba(255,255,255,0.56);
+      --border: rgba(255,255,255,0.12);
+      --shadow: 0 12px 28px rgba(0,0,0,0.45);
+      --radius: 18px;
+      --accent: rgba(120, 180, 255, 0.95);
+      --accent2: rgba(120, 180, 255, 0.16);
+
+      /* “Ícone Android” */
+      --icon-radius: 22px; /* mais “Android-like” */
+      --icon-border: rgba(255,255,255,0.14);
+      --icon-shadow: 0 10px 18px rgba(0,0,0,0.35);
+      --icon-highlight: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.18),
+        rgba(255,255,255,0.02) 55%,
+        rgba(0,0,0,0.08)
+      );
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root{
+        --bg: #f6f8fc;
+        --panel: rgba(10,15,22,0.04);
+        --panel-strong: rgba(10,15,22,0.06);
+        --text: rgba(10,15,22,0.92);
+        --muted: rgba(10,15,22,0.64);
+        --muted2: rgba(10,15,22,0.52);
+        --border: rgba(10,15,22,0.10);
+        --shadow: 0 12px 28px rgba(10,15,22,0.12);
+        --accent: rgba(0, 90, 200, 0.95);
+        --accent2: rgba(0, 90, 200, 0.10);
+
+        --icon-border: rgba(10,15,22,0.10);
+        --icon-shadow: 0 10px 18px rgba(10,15,22,0.14);
+        --icon-highlight: linear-gradient(
+          135deg,
+          rgba(255,255,255,0.70),
+          rgba(255,255,255,0.12) 55%,
+          rgba(10,15,22,0.06)
+        );
+      }
+    }
+
+    *{ box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      background:
+        radial-gradient(1000px 600px at 20% 0%, rgba(120,180,255,0.16), transparent 60%),
+        radial-gradient(900px 700px at 90% 10%, rgba(180,120,255,0.10), transparent 55%),
+        var(--bg);
+      color: var(--text);
+    }
+
+    .container{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 32px 18px 56px;
+    }
+
+    header{
+      margin-top: 10px;
+      margin-bottom: 22px;
+    }
+
+    .title{
+      font-size: clamp(26px, 3.6vw, 38px);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0 0 10px 0;
+    }
+
+    .welcome{
+      margin: 0;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.55;
+      max-width: 72ch;
+    }
+
+    .dev{
+      margin-top: 12px;
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--panel), transparent);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .dev strong{
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    .grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .card{
+      position: relative;
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 16px;
+      padding: 16px 16px 56px 16px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--panel), transparent);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .card::before{
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background: radial-gradient(520px 220px at 20% 0%, rgba(120,180,255,0.18), transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Ícone com acabamento “Android-like” */
+    .app-icon{
+      width: 96px;
+      height: 96px;
+      border-radius: var(--icon-radius);
+      border: 1px solid var(--icon-border);
+      background: var(--panel-strong);
+      box-shadow: var(--icon-shadow);
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      isolation: isolate; /* garante layers do highlight */
+    }
+
+    .app-icon img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: var(--icon-radius);
+      transform: translateZ(0);
+    }
+
+    /* highlight e leve gloss por cima do ícone */
+    .app-icon::after{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--icon-highlight);
+      mix-blend-mode: overlay;
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
+    /* leve “inner ring” para dar profundidade */
+    .app-icon::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: var(--icon-radius);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .app-content{
+      position: relative;
+      z-index: 1;
+      min-width: 0;
+    }
+
+    .app-title{
+      margin: 2px 0 6px 0;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .app-subtitle{
+      margin: 0;
+      color: var(--muted2);
+      font-size: 14.5px;
+      line-height: 1.45;
+      max-width: 70ch;
+    }
+
+    .pill{
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(120,180,255,0.35);
+      background: linear-gradient(180deg, var(--accent2), transparent);
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 650;
+      font-size: 13.5px;
+      transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+      z-index: 2;
+    }
+
+    .pill:hover{
+      transform: translateY(-1px);
+      border-color: rgba(120,180,255,0.55);
+      background: linear-gradient(180deg, rgba(120,180,255,0.20), transparent);
+    }
+
+    .pill:active{
+      transform: translateY(0px);
+    }
+
+    .pill svg{
+      width: 16px;
+      height: 16px;
+      opacity: 0.95;
+    }
+
+    footer{
+      margin-top: 22px;
+      color: var(--muted2);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .footnote{
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      margin-top: 18px;
+    }
+
+    @media (min-width: 720px){
+      .card{
+        grid-template-columns: 104px 1fr;
+        gap: 18px;
+        padding: 18px 18px 58px 18px;
+      }
+      .app-icon{
+        width: 104px;
+        height: 104px;
+      }
+      .app-title{
+        font-size: 19px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <header>
+      <h1 class="title">Bem-vindo.</h1>
+      <p class="welcome">
+        Este é o portal oficial do desenvolvedor para informações públicas dos meus aplicativos, incluindo políticas e links relevantes.
+      </p>
+
+      <div class="dev" aria-label="Identificação do desenvolvedor">
+        Desenvolvedor: <strong>Igor Sieczkowski Moreira</strong>
+      </div>
+    </header>
+
+    <section class="grid" aria-label="Lista de aplicativos">
+      <article class="card">
+        <div class="app-icon" aria-hidden="true">
+          <img src="assets/calculadora-rescisao-clt.jpg" alt="Ícone do app Calculadora de Rescisão CLT" />
+        </div>
+
+        <div class="app-content">
+          <h2 class="app-title">Calculadora de Rescisão CLT</h2>
+          <p class="app-subtitle">
+            Simule sua demissão (férias, 13º, FGTS) de forma fácil e rápida!
+          </p>
+        </div>
+
+        <a class="pill"
+           href="https://igorsiecz.github.io/privacy-policy-rescisao-clt/"
+           rel="noopener"
+           aria-label="Abrir Política de Privacidade do app Calculadora de Rescisão CLT">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2l7 4v6c0 5-3 9-7 10C8 21 5 17 5 12V6l7-4z" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 7v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 16.8h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          Política de privacidade
+        </a>
+      </article>
+    </section>
+
+    <footer class="footnote">
+      <div>
+        Se você veio até aqui a partir da loja, este site existe para transparência e conformidade, e pode ser atualizado ao longo do tempo.
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
