@@ -3,13 +3,14 @@
   "apps": {
     "calculadora-rescisao-clt": {
       "versions": {
-        "min_version": 100,
-        "current_version": 20000
+        "min_version": 10000,
+        "current_version": 10000
       },
       "messages": {
         "title": "Apenas um teste",
         "content": "Esse é apenas um teste, espero que você esteja vendo.",
-        "code": 2
+        "code": 9999,
+        "last_code": 2
       }
     }
   }
