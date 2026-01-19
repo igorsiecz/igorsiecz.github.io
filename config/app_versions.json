@@ -7,9 +7,9 @@
         "current_version": 10000
       },
       "messages": {
-        "title": "Apenas um teste",
-        "content": "Esse é apenas um teste, espero que você esteja vendo.",
-        "code": 9999,
+        "title": "Nota do desenvolvedor",
+        "content": "Este aplicativo foi criado por um desenvolvedor independente. A sua avaliação na Play Store é de extrema valia para aprimorar e manter o aplicativo em funcionamento. Agradeço o seu apoio.\n\nAbraços,\n~ Igor Moreira",
+        "code": 3,
         "last_code": 2
       }
     }
