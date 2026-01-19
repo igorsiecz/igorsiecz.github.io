@@ -2,8 +2,15 @@
   "schema_version": 1,
   "apps": {
     "calculadora-rescisao-clt": {
-      "min_version": 10000,
-      "current_version": 10000
+      "versions": {
+        "min_version": 10000,
+        "current_version": 10000
+      },
+      "messages": {
+        "title": "",
+        "content": "",
+        "code": 9999
+      }
     }
   }
 }
