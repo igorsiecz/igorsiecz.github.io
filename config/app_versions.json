@@ -7,9 +7,9 @@
         "current_version": 10000
       },
       "messages": {
-        "title": "",
-        "content": "",
-        "code": 9999
+        "title": "Apenas um teste",
+        "content": "Esse é apenas um teste, espero que você esteja vendo.",
+        "code": 0001
       }
     }
   }
