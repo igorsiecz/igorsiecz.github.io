@@ -3,14 +3,14 @@
   "apps": {
     "calculadora-rescisao-clt": {
       "versions": {
-        "min_version": 1000400,
-        "current_version": 1000400
+        "min_version": 1100000,
+        "current_version": 1100000
       },
       "messages": {
-        "title": "Nota do desenvolvedor",
-        "content": "App feito por um desenvolvedor independente. Sua avaliação ajuda a manter e a aprimorar a experiência.\n\nObrigado, Igor Moreira.",
-        "code": 6,
-        "last_code": 5
+        "title": "Esta atualização é para você!",
+        "content": "Este aplicativo é desenvolvido de forma independente, e cada atualização é pensada para tornar seus cálculos mais simples, claros e confiáveis.\n\nSe o app está ajudando você, deixe sua avaliação. Ela faz toda a diferença para que eu continue aprimorando a experiência.\n\nObrigado,\nIgor Moreira.",
+        "code": 7,
+        "last_code": 6
       }
     }
   }
