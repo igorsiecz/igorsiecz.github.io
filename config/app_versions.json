@@ -3,7 +3,7 @@
   "apps": {
     "calculadora-rescisao-clt": {
       "versions": {
-        "min_version": 1000400,
+        "min_version": 0,
         "current_version": 1010000
       },
       "messages": {
