@@ -7,8 +7,8 @@
         "current_version": 2000000
       },
       "messages": {
-        "title": "Essa versão é para você!",
-        "content": "Este aplicativo é desenvolvido de forma independente, e cada atualização é pensada para tornar seus cálculos mais simples, claros e confiáveis.\n\nSe o app está ajudando você, deixe sua avaliação. Ela faz toda a diferença para que possamos continuar aprimorando a experiência.\n\nObrigado,\nIgor Moreira.",
+        "title": "Agradecimento do desenvolvedor",
+        "content": "Se o app está ajudando você, deixe sua avaliação. Ela faz toda a diferença para que possamos continuar aprimorando a experiência.\n\nObrigado,\nIgor Moreira.",
         "code": 7,
         "last_code": 6
       }
