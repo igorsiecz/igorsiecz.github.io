@@ -4,13 +4,13 @@
     "calculadora-rescisao-clt": {
       "versions": {
         "min_version": 1100000,
-        "current_version": 2000000
+        "current_version": 2000003
       },
       "messages": {
         "title": "Agradecimento do desenvolvedor",
-        "content": "Se o app está ajudando você, deixe sua avaliação. Ela faz toda a diferença para que possamos continuar aprimorando a experiência.\n\nObrigado,\nIgor Moreira.",
-        "code": 8,
-        "last_code": 7
+        "content": "Muito obrigado pelo seu apoio! Se o app está ajudando você, deixe sua avaliação. Ela faz toda a diferença!\n\nObrigado,\nIgor Moreira.",
+        "code": 9,
+        "last_code": 8
       }
     }
   }
