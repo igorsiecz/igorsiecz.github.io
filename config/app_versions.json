@@ -4,7 +4,7 @@
     "calculadora-rescisao-clt": {
       "versions": {
         "min_version": 1100000,
-        "current_version": 2000003
+        "current_version": 2000004
       },
       "messages": {
         "title": "Agradecimento do desenvolvedor",
